@@ -1,5 +1,6 @@
 // CS50, pseet04. Completed on 10 April 2020
-// This doesn't work well inside Visual Studio Code (it only returns one jpeg. However, it does work on the CD50 IDE)
+// This doesn't work well on local machine as it only returns one jpeg
+// However, it does work on the CD50 IDE)
 #include <stdio.h>
 #include <stdlib.h>
 
