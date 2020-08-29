@@ -1,6 +1,7 @@
-// CS50, pseet04. Completed on 10 April 2020
+// CS50 pset04. Completed on 10 April 2020
 // This doesn't work well on local machine as it only returns one jpeg
-// However, it does work on the CD50 IDE)
+// However, it does work on the CD50 IDE
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -27,7 +28,8 @@ int main(int argc, char *argv[])
 
     // Declare buffer variable of size 512
     unsigned char buffer[BLOCK_SIZE];
-    // Initialise photo counter
+
+    // Initialise photo counter to zero
     int photo_number = 0;
 
     // feof checks if the end of the given file stream has been reached
@@ -44,7 +46,7 @@ int main(int argc, char *argv[])
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff)
             {
                 sprintf(jpg_name, "%03i.jpg", photo_number);
-                // "w" for write
+                // Open jpeg file in write mode
                 FILE *jpeg_file = fopen(jpg_name, "w");
                 fwrite(&buffer, BLOCK_SIZE, 1, jpeg_file);
                 fclose(jpeg_file);
